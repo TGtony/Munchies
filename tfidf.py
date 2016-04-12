@@ -38,7 +38,7 @@ for i in range(len(features)): # generate list of indexes for comparison
 
 indicesremove = np.setdiff1d(indices2, indices) # generate list of indexes that are not of the target
 
-features = np.array(features)
+tfidf_array = np.delete(tfidf_array, indicesremove, 1)
 features = np.delete(features, indicesremove, None) # delete all columns of unwanted adj
 
 # writing to an output file
