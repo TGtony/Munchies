@@ -38,8 +38,28 @@ for i in range(len(features)): # generate list of indexes for comparison
 
 indicesremove = np.setdiff1d(indices2, indices) # generate list of indexes that are not of the target
 
-tfidf_array = np.delete(tfidf_array, indicesremove, 1)
+tfidf_array = np.delete(tfidf_array, indicesremove, 1) # delete all columns of unwanted adj
 features = np.delete(features, indicesremove, None) # delete all columns of unwanted adj
+
+from sklearn.svm import SVR
+
+numlabels = [] # assign an integer label to each product
+
+for i in range(len(tfidf_array)):
+    numlabels.append(i+1)
+
+# test:
+pred = [[0, 0.9, 0, 0, 0.9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+regression_model = SVR()
+regression_model.fit(tfidf_array, numlabels)
+
+result = regression_model.predict(pred)
+print (result)
+
+result_index = int(result) - 1 # get index number for product match
+
+print (products[result_index]) # print product at index
 
 # writing to an output file
 #
