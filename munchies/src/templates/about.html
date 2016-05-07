@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}About{% endblock %}
+
+{% block navbar-left %}
+    {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+    <div id="sec1" class="text-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>{% include "_brandname.html" %}</h1>
+                    <p class="lead">{% include "_tagline.html" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sec2" class="text-page">
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-body" >
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>Meet The Team</h2>
+                            <p class="lead">The Wonderful People Behind the Site</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 text-center">
+                            <div class="text-center"><img class="img-circle centered"
+                                                          src="{{ STATIC_URL }}images/default_profile.png"
+                                                          alt="profile pic"></div>
+                            <h2>Kevin Lam</h2>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <div class="text-center"><img class="img-circle centered"
+                                                          src="{{ STATIC_URL }}images/default_profile.png"
+                                                          alt="profile pic"></div>
+                            <h2>Tony Gong</h2>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <div class="text-center"><img class="img-circle centered"
+                                                          src="{{ STATIC_URL }}images/default_profile.png"
+                                                          alt="profile pic"></div>
+                            <h2>Mohammed Uddin</h2>
+                        </div>
+                    </div>
+                    <div class="row spacer">
+                        <div class="col-lg-4 col-lg-offset-2 text-center">
+                            <div class="text-center"><img class="img-circle centered"
+                                                          src="{{ STATIC_URL }}images/default_profile.png"
+                                                          alt="profile pic"></div>
+                            <h2>Jaber Janati</h2>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <div class="text-center"><img class="img-circle centered"
+                                                          src="{{ STATIC_URL }}images/default_profile.png"
+                                                          alt="profile pic"></div>
+                            <h2>Benny Chen</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+{% endblock container %}

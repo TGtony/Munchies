@@ -1,0 +1,4 @@
+<li {% if active_link == "home" %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+<li {% if active_link == "search:tag_search" %}class="active"{% endif %}><a href="{% url 'search:tag_search' %}">Search</a></li>
+<li {% if active_link == "search:random" %}class="active"{% endif %}><a href="{% url 'search:random' %}">Random</a></li>
+<li {% if active_link == "about" %}class="active"{% endif %}><a href="{% url 'about' %}">About</a></li>

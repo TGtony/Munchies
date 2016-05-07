@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}{{ block.super }}Search{% endblock %}
+{% block navbar-left %}
+    {% include "_navbar.html" with active_link="search:tag_search" %}
+{% endblock %}
+
+{% block container %}
+    <button type="submit" class="navigation navigation-left" style="text-decoration : none; outline-width: 0;" onClick="javascript:window.history.back()">
+        <i class="fa fa-angle-double-left"></i>
+    </button>
+    <div class="container navbarpadding container-size">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Here's your personalized results!
+                </h3>
+            </div>
+
+            <div class="panel-body">
+                {% if all_product %}
+                    {% for product in all_product %}
+                        <div class="col-xs-4 col-md-2 results-image">
+                            {% if product.url  == "http://g-ecx.images-amazon.com/images/G/01/x-site/icons/no-img-sm._CB192198896_.gif" %}
+                                <a href="{% url 'search:detail' product.id %}"><img src={% static 'images/image404-small.png' %} alt=""/></a>
+                            {% else %}
+                                <a href="{% url 'search:detail' product.id %}"><img src={{ product.url }} alt=""/></a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h1>Product not loaded</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock container %}

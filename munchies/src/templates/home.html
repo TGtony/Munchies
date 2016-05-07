@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block navbar-left %}
+    {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+{% block navbar-right %}
+    {% if not user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
+        <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block splash %}
+    <div class="jumbotron jumbotron-carousel corporate-jumbo">
+        <div class="container">
+            <div class="panel panel-default corporate-jumbo-panel text-center">
+                <div class="panel-body">
+                    <h1>{% include "_brandname.html" %}</h1>
+                    <p>{% include "_tagline.html" %}</p>
+
+                    <a class="btn btn-primary" href="{% url 'search:tag_search' %}" role="button">get started here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock splash %}
+
+{% block container %}
+    <!-- Benefits of the Django application -->
+    <a name="about"></a>
+
+    <div class="container">
+        <div class="panel panel-default jumbopadding">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src={% static 'images/image404.png' %} alt=""/>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2>What's Munchies</h2>
+                        <p>Munchies description goes here</p>
+                    </div>
+                </div>
+                <br>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-lg-6 text-right">
+                        <h2>Under the hood</h2>
+                        <p>Product details here:</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src={% static 'images/image404.png' %} alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock container %}
+
+{% block scripts %}
+    <script src="{% static 'site/js/site.js' %}"></script>
+{% endblock scripts %}
+

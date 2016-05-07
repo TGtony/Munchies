@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block title %}{{ block.super }}Search{% endblock %}
+{% block navbar-left %}
+    {% url 'search:random' as random_url %}
+    {% if request.path  == random_url %}
+        {% include "_navbar.html" with active_link="search:random" %}
+    {% else %}
+        {% include "_navbar.html" with active_link="search:tag_search" %}
+    {% endif %}
+
+{% endblock %}
+
+{% block container %}
+
+    <button type="submit" class="navigation navigation-left" style="text-decoration : none; outline-width: 0;" onClick="javascript:window.history.back()">
+        <i class="fa fa-angle-double-left"></i>
+    </button>
+    <div class="container product-detail-page">
+        <div class="col-md-6 ">
+            <div class="panel panel-default">
+                <div class="panel-body image-panel-coloring">
+                    {% if product.url  == "http://g-ecx.images-amazon.com/images/G/01/x-site/icons/no-img-sm._CB192198896_.gif" %}
+                        <img src={% static 'images/image404.png' %} alt=""/>
+                    {% else %}
+                        <img src={{ product.url }} alt=""/>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{ product.title }}
+                    </h3>
+                </div>
+                <div class="panel-body fixed-panel">
+                    <h6>Product Description:<h6>
+                        {{ product.description }}
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock container %}
