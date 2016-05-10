@@ -27,6 +27,9 @@
                             {% if product.url  == "http://g-ecx.images-amazon.com/images/G/01/x-site/icons/no-img-sm._CB192198896_.gif" %}
                                 <a href="{% url 'search:detail' product.id %}"><img src={% static 'images/image404-small.png' %} alt=""/></a>
                             {% else %}
+{#                                <div class="results-image-top">#}
+{#                                    <p>{{ product.title }}</p>#}
+{#                                </div>#}
                                 <a href="{% url 'search:detail' product.id %}"><img src={{ product.url }} alt=""/></a>
                             {% endif %}
                         </div>
