@@ -9,7 +9,6 @@ $(document).ready(function () {
         $.each(toggle_indexes, function(i, obj){
             query_string = replaceAt(query_string, parseInt(toggle_indexes[i]), "1");
         })
-        alert(query_string);
         $('#query').val(query_string);
     });
 
