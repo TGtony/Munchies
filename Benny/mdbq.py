@@ -10,7 +10,7 @@ def querydb(inputstring, outputarray):
         cursor = db.chips.find({"asin": item})
         for doc in cursor:
             #print(doc)
-            outputstring.append(doc)
+            outputarray.append(doc)
     return;
 
 
