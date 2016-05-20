@@ -32,3 +32,49 @@ def results(request):
     filter_array = query_filter.split()
     all_product = Product.objects.filter(asin__in=filter_array)
     return render(request, 'search/results.html', {'all_product': all_product})
+
+def androidQuery(request, adjs):
+	query_string = len(adjs)
+	query_filter = predict_func(adjs)
+#	filter_array = query_filter.split()
+
+#	localDbProductIds
+#	all_product = Product.objects.filter(asin__in=filter_array)
+	
+#	urls=''	
+#	for product in all_product:
+#		urls+='['
+#		urls+=product.title
+#		urls+='/'
+#		urls+=product.url
+#		urls+=' '
+#		urls+=product.asin
+		
+	return HttpResponse(query_filter)
+
+
+
+
+
+def asinQry(request, asin):
+	asin=asin.replace("_"," ")
+	
+	filter_array = asin.split()
+	all_product = Product.objects.filter(asin__in=filter_array)
+
+	urls=''	
+	for product in all_product:
+		urls+=product.url
+		urls+='_'
+		urls+=product.title
+		urls+='_'
+		urls+=product.description
+		urls+='_'		
+	return HttpResponse(urls)
+
+
+
+
+
+
+

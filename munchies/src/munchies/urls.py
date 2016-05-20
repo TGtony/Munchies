@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(accounts.urls, namespace='accounts')),
     url(r'^search/', include(search.urls, namespace='search')),
+    url(r'^android/', include('android.urls')),
 ]
 
 # User-uploaded files like profile pics need to be served in development
