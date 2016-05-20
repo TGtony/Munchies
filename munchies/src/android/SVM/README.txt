@@ -1,0 +1,12 @@
+predict.py
+	- The SVM script
+	- Make sure that all the svm_model.pk1 files are in the same directory
+	- input parameter: string of 1s and 0s (e.g. 10001000100100100....000110)
+		- size of the string must be 300 (there are 300 adjectives)
+		- make sure order of input for adjectives corresponds to order in model
+			- Refer to features_list.txt for which index each adjective corresponds to
+				- Take the adjective's line number in .txt -1 and that's its index in the prediction vector
+	- output: Returns a string that contains asin results separated by whitespaces
+	- to call function in another script: 
+		- import predict
+		- predict.predict_func( inputstring )
