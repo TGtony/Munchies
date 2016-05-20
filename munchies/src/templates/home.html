@@ -36,6 +36,33 @@
 {% block container %}
     <!-- Benefits of the Django application -->
     <a name="about"></a>
+
+    <div class="container">
+        <div class="panel panel-default jumbopadding">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src={% static 'images/image404.png' %} alt=""/>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2>What's Munchies</h2>
+                        <p>Munchies description goes here</p>
+                    </div>
+                </div>
+                <br>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-lg-6 text-right">
+                        <h2>Under the hood</h2>
+                        <p>Product details here:</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src={% static 'images/image404.png' %} alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock container %}
 
 {% block scripts %}
