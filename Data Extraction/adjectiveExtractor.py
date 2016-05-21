@@ -9,21 +9,21 @@ def main():
 	write_file = open("review_data_output.txt", "w")
 
 	count = 0
-	
+
 
 	size = os.stat("C:/Users/Jaber/Documents/Capstone/Munchies/review_data_output.txt")
 
 	for lines in read_file:
-		write_file.write(lines)		
+		write_file.write(lines)
 		reviewText = read_file.readline()
 		listOfAdjectives = performNLTK(reviewText)
 
 		write_file.write("%s\n" %listOfAdjectives)
-		
-		
 
 
-		
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 /**
  * Extracts desired parts of the meta data
- * inputs: meta_data.txt (meta data of desired snacks)
+ * inputs: final_meta_data.txt (meta data of desired snacks)
  * output: database.csv (file to be converted by json)
  * Next program: csvtojson.py
  */

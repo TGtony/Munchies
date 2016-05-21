@@ -1,5 +1,5 @@
 /**
- * Extracts desired parts of the review Part II
+ * Combines reviews of each product into 1 rview
  * inputs: data.txt (review data)
  * output: sorted_chips_data.txt (review data that's ready for adjective extraction)
  * Next program: adjectiveExtractor.py
