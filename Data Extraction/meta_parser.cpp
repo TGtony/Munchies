@@ -1,7 +1,7 @@
 /**
  * Parses the main meta data file for desired snacks
  * inputs: finalist.txt (list of desired snacks)
- *         meta_Grocery_and_Gourmet_Food.txt (the main meta data)
+ *         meta_Grocery_and_Gourmet_Food.txt (the main meta data, converted into txt)
  * output: final_meta_data.txt (target meta data)
  * Next Program: getreviews.cpp
  *               getdatabasefile.cpp

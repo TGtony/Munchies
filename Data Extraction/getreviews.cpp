@@ -1,7 +1,7 @@
 /**
  * Gets reviews that matches the meta data
  * inputs: meta_data.txt (meta data of desired snacks)
- *         review_Grocery_and_Gourmet_Food.txt (the main review data)
+ *         review_Grocery_and_Gourmet_Food.txt (the main review data, converted into txt)
  * output: final_review_data.txt (target meta data)
  * Next Program: review_parser.cpp
  */
